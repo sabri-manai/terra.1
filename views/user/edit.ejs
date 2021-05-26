@@ -1,0 +1,101 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+
+<h2 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  text-align: center; " >Update profile </h2>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <img src="<%= '/images/' + user.avatar%>" height="150px" class="avatar" width="150px">
+            
+        </div>
+        <div class="form-group">
+        <style>
+            .avatar{
+                border-radius: 50%
+            }
+        </style>
+        <div class="col-md-9">
+            <form action="/users/uploadAvatar" method="POST" enctype="multipart/form-data">
+            <label for="avatar">Avatar</label>  
+            <input type="file" name="avatar" id="avatar" onchange="readURL(this)">    
+            <hr>
+            <h5 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  text-align: center; " >Image Preivew</h5>
+            <img src="#" alt="" id="imagePlaceholder" class="avatar" height="200px" width="200px" style="display: none;">
+            <br>
+            <button type="submit" class="btn btn-warning" disabled> <head>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script>
+            $('input[type=file]').change(function(){
+                            if($('input[type=file]').val()==''){
+                                $('button').attr('disabled',true)
+                            } 
+                            else{
+                              $('button').attr('disabled',false);
+                            }})
+                </script>
+            </head> Upload</button>
+            </div>  
+        </div>  
+        </form>
+                <form  action="/users/edit" method="post">
+                    <h5 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ; ">Personal info</h5>
+                    <div class="form-group">
+                        <label for="mobile">Mobile</label>
+                        <input type="text" name="mobile" id="mobile" class="form-control" value="<%= user.mobile%>" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" name="location" id="location" class="form-control" value="<%= user.location%>" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="position">Position</label>
+                        <input type="text" name="position" id="position" class="form-control" value="<%= user.position%>" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dateOfBirth">Birthday</label>
+                        <input type="text" name="dateOfBirth" id="dateOfBirth" class="form-control" value="<%= user.dateOfBirth%>" >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City:</label>
+                        <select name="city" id="city">
+                          <option value="Ariana">Ariana</option>
+                          <option value="Ben Arous">Ben Arous</option>
+                          <option value="Bizerte">Bizerte</option>
+                          <option value="Beja">Beja</option>
+                          <option value="Gabes">Gabes</option>
+                          <option value="Gafsa">Gafsa</option>
+                          <option value="Jendouba">Jendouba</option>
+                          <option value="Kirouane">Kirouane</option>
+                          <option value="kasserine">Kasserine</option>
+                          <option value="Kébeli">Kébeli</option>
+                          <option value="La Manouba">La Manouba</option>
+                          <option value="Le Kef">Le Kef</option>
+                          <option value="Mahdia">Mahdia</option>
+                          <option value="Monastir">Monastir</option>                                 
+                          <option value="Mednine">Mednine</option>
+                          <option value="Nabeul">Nabeul</option>
+                          <option value="Sfax">Sfax</option>
+                          <option value="Sidi Bouzide">Sidi Bouzide</option>
+                          <option value="Siliana">Siliana</option>
+                          <option value="Sousse">Sousse</option>
+                          <option value="Tataouine">Tataouine</option>
+                          <option value="Tozeur">Tozeur</option>
+                          <option value="Tunis">Tunis</option>
+                          <option value="Zagouane">Zaghouane</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-warning"> Update</button>
+                    </div>
+                </form>    
+        </div>
+    </div>
+</div>
+<%- include('../partials/contact') -%>
+<%- include('../partials/footer') -%>

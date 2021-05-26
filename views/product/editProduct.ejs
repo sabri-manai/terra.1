@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<body>
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+          <h2 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  text-align: center; " >Update product </h2>
+<div class="container">
+    <div class="row mt-4">
+        <div class="container">
+        <div class="col-md-3">
+            <img  src="<%= '/images/' + product.productPic%>" height="150px" width="399px"    >    
+        </div>
+        <br><br>
+
+        <div class="form-group">
+        <div class="col-md-9">
+            <form action="/products/uploadProductPic" method="POST" enctype="multipart/form-data">
+           <h5 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  text-align: center; " >Update product picture</h5>
+            <input type="hidden" name="id" value="<%=product.id%>">
+            <input type="file" name="productPic" id="productPic" onchange="readURL(this)">    
+            <br><br>
+            <h5 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  text-align: center; " >Image Preivew</h5>
+            <img src="#" alt="" id="imagePlaceholder"  height="200px" width="200px" style="display: none;">
+            <br>
+            <button type="submit" class="btn btn-warning" disabled> <head>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script>
+            $('input[type=file]').change(function(){
+                            if($('input[type=file]').val()==''){
+                                $('button').attr('disabled',true)
+                            } 
+                            else{
+                              $('button').attr('disabled',false);
+                            }})
+                </script>
+            </head>Upload</button>
+            </div>  
+        </div>  
+        </form>
+            <hr>
+        </div>
+
+
+            <form  action="/products/updateProduct" method="post">
+                <input type="hidden" name="id" value="<%=product.id%>">
+
+                <div class="form-group">
+                    <label for="productId">Product Id</label>
+                    <input type="text" name="productId" id="productId" value="<%=product.productId%>" class="form-control">
+                </div>
+               
+                <div class="form-group">
+                    <label for="productName">Title</label>
+                    <input type="text" name="productName" id="productName" value="<%=product.productName%>" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price </label>
+                    <input type="text" name="price" id="price" value="<%=product.price%>" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="productDescription">Description </label>
+                    <input type="text" name="productDescription" value="<%=product.productDescription%>" id="productDescription" class="form-control">
+                </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-outline-warning  btn-block"> Update product</button>
+                    </div>       
+            </form>
+
+            
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+<%- include('../partials/contact') -%>
+<%- include('../partials/footer') -%>
+
+</body>
+</html>

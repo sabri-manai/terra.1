@@ -1,0 +1,168 @@
+<div style="padding-left: 0px;  padding-right: 0px; padding-bottom: 50px;">
+<nav class="navbar navbar-expand-lg   navbar-collapse bg-light">
+
+  <a class="navbar-brand" href="/articles"  style="padding-left: 15px; "> <img  src="/images/Icon.png" width="98" height="27" alt="" >  </a>
+     
+  <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    
+      <div class="collapse navbar-collapse" id="navbarColor01">
+
+              <ul class="navbar-nav ml-auto " class="navbar-nav mr-auto">
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="/articles"><i class="fas fa-home"></i>  Home</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/products/viewProduct"><i class="fab fa-product-hunt"></i> Products</a>
+                  </li>
+
+
+
+                  <% if ((user) && (user.role==="author")) { %>
+
+                  
+                     
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-id-card"></i>
+                        View
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a style=" color: #026633;  font-family: src='C:\Users\Sabri\Documents\Projects\Clubs\Terra\TerraWeb\Font family\DIAVLO_BLACK_II.OTF' ;  font-size: 14px;" class="dropdown-item"  href="/users/userInfo"><i class="fa fa-id-card"></i> Team </a>
+                        <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item"  href="/suppliers/viewSupplier"><i class="fa fa-id-card"></i> Suppliers</a>
+                      </div>
+                    </li>
+
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-plus" aria-hidden="true"></i>
+                          Add a new
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item"  href="/products/addProduct"><i class="fa fa-product-hunt" aria-hidden="true"></i>                            Product</a>
+                          <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item"  href="/articles/create"><i class="fa fa-id-card"></i> Article</a>
+                          <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item"  href="/suppliers/addSupplier"><i class="fa fa-id-card"></i> Supplier</a>
+                        </div>
+                      </li>
+
+                    
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          My Terra
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item"  href="/users/profile"><i class="fa fa-id-card"></i> Profile</a>
+                          <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item" href="/users/signup"><i class="fa fa-user-plus"></i> Add member</a>
+                          <div  class="dropdown-divider"></div>
+                          <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item" href="/users/logout"><i class="fa fa-sign-out"></i> logout</a>
+                        </div>
+                      </li>
+                    
+                    <% } else if (user) { %>
+                      <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-id-card"></i>
+                            View
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item"  href="/users/userInfo"><i class="fa fa-id-card"></i> Team </a>
+                            <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item"  href="/suppliers/viewSupplier"><i class="fa fa-id-card"></i> Suppliers</a>
+                          </div>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            Add a new
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item"  href="/products/addProduct"><i class="fa fa-product-hunt" aria-hidden="true"></i>                              Product</a>
+                            <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item"  href="/articles/create"><i class="fa fa-id-card"></i> Article</a>
+                            <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item"  href="/suppliers/addSupplier"><i class="fa fa-id-card"></i> Supplier</a>
+                          </div>
+                        </li>
+                      </ul>
+
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          My Terra
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="dropdown-item"  href="/users/profile"><i class="fa fa-id-card"></i> Profile</a>
+                          <div class="dropdown-divider"></div>
+                          <a style=" color: #026633;  font-family: Diavlo Light , Diavlo , sans-serif ;  font-size: 14px;" class="nav-link" class="dropdown-item" href="/users/logout"><i class="fa fa-sign-out"></i> logout</a>
+                        </div>
+                      </li>
+
+                    <% } else { %> 
+                      <li class="nav-item">
+                        <a class="nav-link" href="/users/login"><i class="fa fa-sign-in"></i> login</a>
+                      </li>
+                     <%}%> 
+                </ul>    
+      </div>
+</nav>
+</div>
+
+          <style>
+ .logo-image{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+}
+            div.navbar-collapse ul.navbar-nav li {
+              color: #026633;
+              font-family: "Diavlo Light", Diavlo , sans-serif ;
+              font-size: 13px;
+            }
+            
+            .navbar-toggler{
+              color: #026633;
+
+            }
+
+            a{
+              color: #026633;
+              font-family: "Diavlo book", Diavlo , sans-serif ;
+              font-size: 14px;
+            }
+            
+            p{
+              color: #026633;
+              font-family: "Diavlo book", Diavlo , sans-serif ;
+              font-size: 14px;
+            }
+            
+            h2{
+              color: #ffffff;
+              font-family: "Diavlo bold", Diavlo , sans-serif ;
+              font-size: 48px;
+              }
+            
+            h3{
+              color: #CF9817;
+              font-family: "Diavlo medium", Diavlo , sans-serif ;
+              font-size: 21px;
+              }
+            
+            label{
+        
+              color: #026633;
+              font-family: "Diavlo book", Diavlo , sans-serif ;
+                 }
+
+                 html,body     {overflow-x: hidden;}
+                 @media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}
+          </style>

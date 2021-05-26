@@ -1,0 +1,36 @@
+
+<%- include('../partials/header.ejs') -%>
+<%- include('../partials/navbar.ejs') -%>
+<div class="container">
+    
+<div class="row mt-4">
+        
+    <div class="col-md-9 offset-md-1">
+        <div class="card">         
+            <div class="card-body">
+                <img  src="<%= '/images/' + product.productPic%>" height="300px" width="800px"    >
+
+                <h5 class="card-title"><%=product.productName %></h5>
+                <hr>
+                <p class="card-text"><%=product.productDescription%></p>
+                <hr>
+                <p class="card-text"><%=product.price%></p>
+                <hr>    
+                <p class="card-text"><%=product.productId%></p>            
+                <% if ((user) && (user.role === "author" )) {%>
+                <a href="<%= '/products/editProduct/' + product.id %>" class="btn btn-warning">Edit product</a>
+                <a href="<%= '/products/delete/' + product.id %>" class="btn btn-danger" onclick="return confirm('Are you sure to delete this record ?');">Delete</a>
+
+                <%}%>
+
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+</div>
+
+<%- include('../partials/contact') -%>
+<%- include('../partials/footer') -%>

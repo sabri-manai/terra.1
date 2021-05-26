@@ -1,0 +1,55 @@
+
+<%- include('../partials/header.ejs') -%>
+<%- include('../partials/navbar.ejs') -%>
+<div class="container" style="padding-bottom: 50px;">   
+    <div class="row mt-4">      
+         <div class="col-md-9 offset-md-1">
+            <div class="card">         
+                <div class="card-body">
+                <form  action="/products/order" method="post">
+             
+                    <input type="hidden" name="product_id" value="<%=product.productId%>">
+                    <input type="hidden" name="price" value="<%=product.price%>">
+                    <input type="hidden" name="productName" value="<%=product.productName%>">
+  
+
+                   <h4 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  text-align: center; " class="text-center">Fill in your order details</h4>
+                    <div class="form-group">
+                        <label for="name">Full name</label>
+                        <input type="text" name="name" id="name" class="form-control">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="phone">Phone </label>
+                        <input type="text" name="phone" id="phone" class="form-control">
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="email">Email </label>
+                        <input type="text" name="email" id="email" class="form-control">
+                    </div> 
+
+                        
+                        <button type="submit" class="btn btn-outline-warning  btn-block"> Confirm order </button>
+                       <br>
+                        <h5 class="text-center" class="card-title" style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  text-align: center; ">Product: <%=product.productName %></h5>
+                    <hr>
+                    <p class="card-text">Description: <%=product.productDescription%></p>
+                    <hr>
+                    <p class="card-text">Price: <%=product.price%></p>
+                    <hr>    
+                    <p class="card-text">Ref: <%=product.productId%></p>
+
+
+                <img style="padding-left: 100px;"  src="<%= '/images/' + product.productPic%>" height="225px" width="700px"    >
+            </div>
+
+ 
+        </form>
+                  </div>
+             </div>       
+       </div>
+    </div> 
+</div>
+<%- include('../partials/contact') -%>
+<%- include('../partials/footer') -%>

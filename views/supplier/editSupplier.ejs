@@ -1,0 +1,86 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+          <h2 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  text-align: center; " >Update product </h2>
+<div class="container">
+    <div class="row mt-4">
+       
+            <div class="container">
+                <div class="col-md-3">
+                    <img  src="<%= '/images/' + supplier.supplierPic%>" height="150px" width="399px"    >    
+                </div>
+                <br><br>
+        
+                <div class="form-group">
+                <div class="col-md-9">
+                    <form action="/suppliers/uploadSupplierPic" method="POST" enctype="multipart/form-data">
+                   <h5 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  text-align: center; " >Update supplier picture</h5>
+                    <input type="hidden" name="id" value="<%=supplier.id%>">
+                    <input type="file" name="supplierPic" id="supplierPic" onchange="readURL(this)">    
+                    <br><br>
+                    <h5 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  text-align: center; " >Image Preivew</h5>
+                    <img src="#" alt="" id="imagePlaceholder"  height="200px" width="200px" style="display: none;">
+                    <br>
+                    <button type="submit" class="btn btn-warning" disabled> <head>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                        <script>
+                    $('input[type=file]').change(function(){
+                                    if($('input[type=file]').val()==''){
+                                        $('button').attr('disabled',true)
+                                    } 
+                                    else{
+                                      $('button').attr('disabled',false);
+                                    }})
+                        </script>
+                    </head>Upload</button>
+                    </div>  
+                </div>  
+                </form>
+                    <hr>
+                </div>
+
+            <form  action="/suppliers/updateSupplier" method="post">
+
+                <input type="hidden" name="id" value="<%=supplier.id%>">
+
+                <div class="form-group">
+                    <label for="name">Supplier name</label>
+                    <input type="text" name="name" value="<%= supplier.name%>" id="name" class="form-control">
+                </div>
+               
+                <div class="form-group">
+                    <label for="productName">Product name</label>
+                    <input type="text" name="productName" value="<%= supplier.productName%>" id="productName" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price of one unity </label>
+                    <input type="text" name="price" value="<%= supplier.price%>" id="price" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone </label>
+                    <input type="text" name="phone" value="<%= supplier.phone%>" id="phone" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Supplier email </label>
+                    <input type="text" name="email" value="<%= supplier.email%>" id="email" class="form-control">
+                </div>
+                    
+                <div class="form-group">
+                    <button type="submit" class="btn btn-outline-warning  btn-block"> update supplier</button>
+                </div>       
+            </form>
+
+            
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+<%- include('../partials/contact') -%>
+<%- include('../partials/footer') -%>

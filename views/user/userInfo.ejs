@@ -1,0 +1,32 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+<div style="padding-right: 30px; padding-left: 30px; ">
+<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+   <% users.forEach(function(user){ %>
+       <div class="col-md-3 col-sm-6" >
+           <div class="thumbnail">
+            <div class="card" >         
+                <div class="card-body">
+              <div class="caption">
+                <img src="<%= '/images/' + user.avatar%>" height="150px" width="150px" class="avatar"   >
+                  <h4><%= user.firstName %> <%= user.lastName %></h4>
+                  <h5><i class="fa fa-id-card"></i><%= user.position %><h5>
+                  <h6><i class="fas fa-location-arrow"></i> <%= user.location %></h6>
+                  <h6> <i class="fa fa-mobile"></i> <%= user.mobile %></h6>
+                  <p> <i class="fa fa-envelope"></i> <%= user.email %></p>
+                  
+                        <style>
+                            .avatar {
+                                border-radius: 50%
+                                    }
+                        </style>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+       <% }); %>
+</div>
+</div>
+<%- include('../partials/contact') -%>
+<%- include('../partials/footer') -%>

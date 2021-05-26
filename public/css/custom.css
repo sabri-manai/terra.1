@@ -1,0 +1,28 @@
+            div.navbar-collapse ul.navbar-nav li {
+  color: #026633;
+  font-family: "Diavlo Light", Diavlo , sans-serif ;
+  font-size: 13px;
+}
+
+a{
+  color: #026633;
+  font-family: "Diavlo book", Diavlo , sans-serif ;
+  font-size: 14px;
+}
+
+p{
+  color: #026633;
+  font-family: "Diavlo book", Diavlo , sans-serif ;
+  font-size: 14px;
+}
+
+h2{
+  color: #ffffff;
+  font-family: "Diavlo bold", Diavlo , sans-serif ;
+  font-size: 48px;}
+
+h3{
+  color: #CF9817;
+  font-family: "Diavlo medium", Diavlo , sans-serif ;
+  font-size: 21px;}
+

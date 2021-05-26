@@ -1,0 +1,97 @@
+
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+<%- include('../partials/flashMessages') -%>   
+<div class="container ">
+    <div class="row mt-4">
+        <div class="col-md-6">
+          <div style="padding-left: 150px;">
+            <img  src="<%= '/images/' + user.avatar%>" height="150px" width="150px" class="avatar"    >
+          </div> 
+           <style>
+                .avatar{
+                    border-radius: 50%;                    
+                         }
+            </style>
+            <h2>Hey <%= user.firstName %>!  </h2>
+            <br> 
+            <div class="col-ml-6">
+            <p>
+                        <div class="container">
+                        <div class="row mt-4">                       
+                        <div class="col-md-9 offset-md-1">
+                        <div class="card">         
+                        <div class="card-body">
+                            <h5 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  " class="card-title"><i class="fa fa-id-badge"></i> Name: <%=user.firstName %> <%=user.lastName %></h5>
+                            <hr>
+                            <p class="card-text"><i class="fa fa-mobile"></i> Phone: <%=user.mobile %></p>
+                            <hr>
+                            <p> <i class="fa fa-envelope"></i> Email : <%=user.email %></p>
+                            <hr>
+                            <p>  <i class="fa fa-id-card"></i> Position : <%=user.position %></p>
+                            <hr>
+                            <p> <i class="fas fa-location-arrow"></i> City: <%=user.city %></p>
+                            <hr>
+                            <p><i class="fas fa-location-arrow"></i> Location: <%=user.location %></p>
+                            <hr>     
+                            <p> <i class="fa fa-envelope"></i> Birthday : <%=user.dateOfBirth.toDateString() %></p>
+                            <hr>                  
+                                  <a  class="btn btn-outline-warning " class="nav-link" href="/users/edit/" >Edit profile</a>    
+                        </div>
+                        </div>        
+                        </div>
+                        </div>
+                        </div>
+            </p>         
+        </div>
+        </div>
+        </div>
+    </div>
+<br>
+<h4 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif; text-align: center;" > My articles</h4>
+<br>
+ <div style="padding-right: 140px; padding-left: 140px;">
+  <hr>
+  <% chunk.forEach((articles)=> {%>
+    <div class="row mt-3"> 
+        <% articles.forEach((article)=> {%>
+          <div class="col-sm-6 col-md-4">
+              <div class="card">
+                  <div class="card-body">
+                    <img  src="<%= '/images/' + article.articlePic%>" height="150px" width="350px">
+                    <br><br>
+                    <h5 style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  " class="card-title"><%= article.title%></h5>
+                    <p><span class="badge badge-secondary">Date: <%=article.date.toDateString()%></span></p>
+                    <hr>
+                    <p class="card-text"><strong> Subject: </strong><%= article.subject%></p>
+                    <a  href="<%=  '/articles/show/'  + article.id %>" >  <p style=" color: #000000;  font-family: Diavlo Light , Diavlo , sans-serif ;  " class="card-text">  <%= article.description%>...</p></a>  
+                    <a href="<%=  '/articles/show/'  + article.id %>" > <i class="fas fa-angle-right"></i> More</a>
+                    </div>
+                </div>
+                <br>
+          </div>
+          <%})%>
+    </div>
+  <%})%>
+</div>
+<div class="row">
+  <div class="col-12 mt-2 mb-4">
+    <nav aria-label="...">
+      <ul class="pagination pagination-lg justify-content-center">
+        <% for (let i=1 ; i <= Math.ceil(total/5); i++) {%>
+        
+          <% if (pageNo == i) {%>
+            <li class="page-item active" style="padding-right: 10px; padding-left: 10px;"><a  class="btn btn-warning" class="page-link" href="<%= '/articles/' + i%>"><%= i%></a></li>
+          <%} else { %>
+          <li class="page-item" style="padding-right: 10px; padding-left: 10px;"><a  class="btn btn-warning" class="page-link" href="<%= '/articles/' + i%>"><%= i%></a></li>
+          <%}%>
+        
+        <%}%>
+        
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<%- include('../partials/contact') -%>
+<%- include('../partials/footer') -%>

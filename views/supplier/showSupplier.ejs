@@ -1,0 +1,42 @@
+
+<%- include('../partials/header.ejs') -%>
+<%- include('../partials/navbar.ejs') -%>
+<div class="container">
+    
+<div class="row mt-4">
+        
+    <div class="col-md-9 offset-md-1">
+        <div class="card">         
+            <div class="card-body">
+                <img src="<%= '/images/' + supplier.supplierPic%>"  height="150px" width="150px" class="avatar"   >
+<Br><Br>
+    <style>
+        .avatar{
+            border-radius: 50%;                    
+                 }
+    </style>
+                <h5 class="card-title"> <%= supplier.name %></h5>
+                <hr>
+                <p class="card-text"><strong>Product:</strong> <%= supplier.productName %></p>
+                <hr>
+                <p class="card-text"><strong>Price:</strong> <%= supplier.price %></p>
+                <hr>
+                <p class="card-text"><%= supplier.email %></p>
+                <hr>
+                <p><%= supplier.mobile %></p>                
+                <% if ((user) && (user.role==="author")) {%>
+                <a href="<%= '/suppliers/editSupplier/' + supplier.id %>" class="btn btn-outline-warning">Edit supplier</a>
+                <a href="<%= '/suppliers/delete/' + supplier.id %>"  class="btn btn-danger" onclick="return confirm('Are you sure to delete this record ?');"> Delete</a>
+                <%}%>
+
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+</div>
+
+<%- include('../partials/contact') -%>
+<%- include('../partials/footer') -%>

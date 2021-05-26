@@ -1,0 +1,38 @@
+
+<%- include('../partials/header.ejs') -%>
+<%- include('../partials/navbar.ejs') -%>
+<div class="container">
+    
+<div class="row mt-4">
+        
+    <div class="col-md-9 offset-md-1">
+        <div class="card">         
+            <div class="card-body">
+                <div style="padding-left: 30px; padding-right: 30px;">
+                <img  src="<%= '/images/' + article.articlePic%>" height="300px" width="720px"    >
+                </div>
+                <br><br>
+
+                <h3 class="card-title"style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif;" ><%=article.title %>                 </h3>
+                <p><span class="badge badge-secondary"> Date: <%=article.date.toDateString()%></span></p>   
+                <p><i class="fas fa-location-arrow"></i> <%=article.location%></p>
+                <p class="card-text" style=" color: #000000;  font-family: Diavlo Light , Diavlo , sans-serif ;  ">Subject: <%= article.subject%></p>             
+                <div class="container">
+                <p class="card-text"><%=article.content%></p>
+                </div>
+                <% if ((user) && (user.id == article.user_id )) {%>
+                <a href="<%= '/articles/edit/' + article.id %>" class="btn btn-warning">Edit article</a>
+                <a href="<%= '/articles/delete/' + article.id %>"  class="btn btn-danger" onclick="return confirm('Are you sure to delete this record ?');"> Delete</a>
+                <%}%>
+
+            </div>
+        </div>
+        
+    </div>
+
+</div>
+
+</div>
+
+<%- include('../partials/contact') -%>
+<%- include('../partials/footer') -%>

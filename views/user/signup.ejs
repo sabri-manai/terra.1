@@ -1,0 +1,97 @@
+<%- include('../partials/header') -%>
+<%- include('../partials/navbar') -%>
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1  style=" color: #CF9817;  font-family: Diavlo Light , Diavlo , sans-serif ;  text-align: center; " class="text-center mb-3">  <i class="fas fa-user-plus"></i> Add member </h1>
+            <hr>
+       
+            <%- include('../partials/flashMessages') -%>     
+            
+            <form  action="/users/signup" method="post">
+             
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" name="confirm_password" id="confirm_password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="UserName">First name</label>
+                    <input type="text" name="firstName" id="firstName" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="UserName">Last name</label>
+                    <input type="text" name="lastName" id="lastName" class="form-control">
+                </div>
+            
+                <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" name="mobile" id="mobile" class="form-control">
+                </div>
+               
+                <div class="form-group">
+                    <label for="dateOfBirth">Birthday</label>
+                    <input type="date" name="dateOfBirth" id="dateOfBirth" class="form-control">
+                </div>
+            
+                <div class="form-group">
+                            <label for="position">Position </label>
+                            <input type="text" name="position" placeholder="Eg: CEO" id="position" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="location">location </label>
+                    <input type="text" name="location" id="location" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="city">Current City:</label>
+                    <select name="city" id="city">
+                      <option value="Ariana">Ariana</option>
+                      <option value="Ben Arous">Ben Arous</option>
+                      <option value="Bizerte">Bizerte</option>
+                      <option value="Beja">Beja</option>
+                      <option value="Gabes">Gabes</option>
+                      <option value="Gafsa">Gafsa</option>
+                      <option value="Jendouba">Jendouba</option>
+                      <option value="Kirouane">Kirouane</option>
+                      <option value="kasserine">Kasserine</option>
+                      <option value="Kébeli">Kébeli</option>
+                      <option value="La Manouba">La Manouba</option>
+                      <option value="Le Kef">Le Kef</option>
+                      <option value="Mahdia">Mahdia</option>
+                      <option value="Monastir">Monastir</option>       
+                      <option value="Mednine">Mednine</option>
+                      <option value="Nabeul">Nabeul</option>
+                      <option value="Sfax">Sfax</option>
+                      <option value="Sidi Bouzide">Sidi Bouzide</option>
+                      <option value="Siliana">Siliana</option>
+                      <option value="Sousse">Sousse</option>
+                      <option value="Tataouine">Tataouine</option>
+                      <option value="Tozeur">Tozeur</option>
+                      <option value="Tunis">Tunis</option>
+                      <option value="Zagouane">Zaghouane</option>
+                    </select>
+                </div>
+
+            
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-outline-warning  btn-block"> Create</button>
+                    </div>    
+            </form>            
+        </div>
+    </div>
+</div>
+
+    
+<%- include('../partials/contact') -%>
+<%- include('../partials/footer') -%>
